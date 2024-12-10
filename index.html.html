@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The ME Website</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #121212;
+            color: #dcdcdc;
+            transition: background-color 0.3s ease;
+        }
+
+        header {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(90deg, #0a0a0a, #121212);
+            color: #eaeaea;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.7);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.8rem;
+            color: #66d9ef;
+            transition: transform 0.3s ease;
+        }
+
+        header h1:hover {
+            transform: scale(1.1);
+        }
+
+        nav {
+            background-color: #1f1f1f;
+            display: flex;
+            justify-content: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.8);
+        }
+
+        nav a {
+            color: #eaeaea;
+            text-decoration: none;
+            font-size: 1rem;
+            margin: 0 1.5rem;
+            padding: 1rem 0;
+            transition: color 0.3s, transform 0.3s, background-color 0.3s;
+        }
+
+        nav a:hover {
+            color: #66d9ef;
+            transform: scale(1.1);
+            background-color: #333;
+            border-radius: 5px;
+        }
+
+        .section {
+            display: none;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: auto;
+            opacity: 0;
+            animation: fadeIn 0.5s forwards;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .media-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .media-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            background-color: #333;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.7);
+        }
+
+        .media-item img,
+        .media-item video {
+            width: 100%;
+            height: auto;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .media-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 8px 24px rgba(102, 217, 239, 0.7);
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #1f1f1f;
+            color: #eaeaea;
+            margin-top: 2rem;
+            box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.7);
+            transition: transform 0.3s ease;
+        }
+
+        footer:hover {
+            transform: translateY(-5px);
+        }
+
+        footer a {
+            color: #66d9ef;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #a3c8d7;
+            text-decoration: underline;
+        }
+
+        h2, h3 {
+            color: #66d9ef;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        h2:hover, h3:hover {
+            color: #a3c8d7;
+            transform: scale(1.05);
+        }
+
+        .social-links a {
+            margin: 0 1rem;
+            font-size: 1.2rem;
+            color: #66d9ef;
+            text-decoration: none;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            transform: scale(1.2);
+            color: #a3c8d7;
+        }
+
+        /* Scroll animation */
+        .scroll-fade {
+            opacity: 0;
+            transition: opacity 0.6s ease-in-out;
+        }
+
+        .scroll-fade.visible {
+            opacity: 1;
+        }
+
+        .toggle-content {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #333;
+            border-radius: 5px;
+        }
+
+        .toggle-button {
+            color: #66d9ef;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .toggle-button:hover {
+            color: #a3c8d7;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Justine's WEB</h1>
+        <p>Welcome to my online space where you can explore my journey, skills, and passions.</p>
+    </header>
+
+    <nav>
+        <a href="javascript:void(0);" onclick="showSection('home')">Home</a>
+        <a href="javascript:void(0);" onclick="showSection('blog')">Blog</a>
+        <a href="javascript:void(0);" onclick="showSection('flex')">Flex</a>
+        <a href="javascript:void(0);" onclick="showSection('contact')">Contact</a>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="section active">
+        <img src="ninja.jpg" alt="Profile Picture" />
+        <p style="text-align: center; font-style: italic; color: #66d9ef;">
+            "SUICIDAL(MY FRIENDS SAID SO), SPORTY ( I THINK), SHORT TEMPERED(BUT GOT IT IN CONTROL FOR NOW),
+            HAS SHORT ATTENTION SPAN."
+        </p>
+        <h2>About Me</h2>
+        <h3>ME AND MY LIKES AND HOBBIES</h3>
+        <p>I am Justine Barsana and am a short-tempered person where just little things can make me mad haha...</p>
+        
+        <hr>
+
+        <!-- Skills Section -->
+        <h2>My Skills</h2>
+        <ul>
+            <li class="toggle-button" onclick="toggleContent('skills')">Click to reveal Skills</li>
+            <div id="skills" class="toggle-content">
+                <ul>
+                    <li>Carpentry</li>
+                    <li>Cooking</li>
+                    <li>Singing</li>
+                    <li>Wielding</li>
+                    <li>A multi sport player</li>
+                    <li>Can play Piano, Bass(but not guitar), a little bit of violine</li>
+                </ul>
+            </div>
+        </ul>
+        <hr>
+        
+        <h2>Things That I Like</h2>
+        <ul>
+            <li class="toggle-button" onclick="toggleContent('like1')">Astronomy</li>
+            <div id="like1" class="toggle-content">
+                <p>I enjoy stargazing and learning about celestial bodies and the universe.</p>
+            </div>
+
+            <li class="toggle-button" onclick="toggleContent('like2')">Music</li>
+            <div id="like2" class="toggle-content">
+                <p>Music is a great way for me to express emotions and connect with others.</p>
+            </div>
+
+            <li class="toggle-button" onclick="toggleContent('like3')">Writing</li>
+            <div id="like3" class="toggle-content">
+                <p>I love writing stories and journaling my experiences.</p>
+            </div>
+            <li class="toggle-button" onclick="toggleContent('like4')">Walking</li>
+            <div id="like4" class="toggle-content">
+                <p>I love walking alone especially at night.</p>
+            </div>
+            <li class="toggle-button" onclick="toggleContent('like5')">Facing the wall</li>
+            <div id="like5" class="toggle-content">
+                <p>I love Facing the wall (I also dont know why) and doze off.</p>
+            </div>
+        </ul>
+        <hr>
+
+        <h2>Things I Don't Like or Hate</h2>
+        <ul>
+            <li class="toggle-button" onclick="toggleContent('hate1')">Overexaggerated things</li>
+            <div id="hate1" class="toggle-content">
+                <p>I dislike when things are blown out of proportion unnecessarily esepcially when things happen too much repittitively.</p>
+            </div>
+
+            <li class="toggle-button" onclick="toggleContent('hate2')">Liars</li>
+            <div id="hate2" class="toggle-content">
+                <p>I dislike it when people lie to me like cant they just be honest about something? They've gave me trust issues and thats also the reason why I dont trust someone that easily.</p>
+            </div>
+
+
+            <li class="toggle-button" onclick="toggleContent('hate3')">Talking too much</li>
+            <div id="hate3" class="toggle-content">
+                <p>I prefer to listen and have meaningful conversations, rather than endless talking.</p>
+            </div>
+        </ul>
+        <H2>How Do I See Myself in 8 Years?</H2>
+        <div class="media-container">
+            <div class="media-item">
+                <h3>Here's a short video presentation/explanation about how do I see myself in 8 years</h3>
+                <video controls>
+                    <source src="invideo-ai-1080 Where Will I Be in 8 Years_ 🤔 2024-12-01.mp4" type="video/mp4">
+                </video>
+            <p> The reason why I wanted to become a priest is... Back then my parents encourages me to keep attending church and church activities, and I kept looking up to this certain Priest in our community which i thought that being a priest must be cool </p>
+            </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="section">
+        <h2>Blog</h2>
+        <div class="media-container">
+            <li  class="toggle-button" onclick="toggleContent('Group image')">Very First Activity.</li>
+            <div id="Group image" class="toggle-content">
+            <h2>This is our very first group activity where we learned and were assigned a timeline of existing computers.</h2>
+            <div class="media-item"><img src="Group2-Barsana.jpeg" alt="Group image"></div>
+            </div>
+
+            <li  class="toggle-button" onclick="toggleContent('virus image')">First HTML Output and Code.</li>
+            <div id="virus image" class="toggle-content">
+            <h2>An activity similar to a case study.</h2>
+            <h2>The malicious Software Activity and also our second activity as a group.</h2>
+            <div class="media-item"><img src="virus.PNG" alt="Virus image"></div>
+</div>
+            <li  class="toggle-button" onclick="toggleContent('HTML output')">First HTML Output and Code.</li>
+            <div id="HTML output" class="toggle-content">
+            <h2>This is our first output of our HTML website.</h2>
+            <div class="media-item"><img src="html act1.PNG" alt="HTML output"></div>
+            </div>
+
+             <li  class="toggle-button" onclick="toggleContent('wireframe')">Wireframe.</li>
+            <div id="wireframe" class="toggle-content">
+            <h2>This is my first design or the supposed wireframe.</h2>
+            <div class="media-item"><img src="wireframe.PNG" alt="Wireframe image"></div>
+           </div>
+
+            <li  class="toggle-button" onclick="toggleContent('Last activity')">And the last activity but not the least we did together as a group.</li>
+            <div id="Last activity" class="toggle-content">
+                <p>This is the last activity we did as a group together with my groupmates where we are tasked to make a venn diagram</p>
+            <div class="media-item"><img src="last.PNG" alt="Last activity"></div>
+        </div>
+    </section>
+
+    <!-- Flex Section -->
+    <section id="flex" class="section">
+        <h2>Flex Section</h2>
+        <ul>
+        <li class="toggle-button" onclick="toggleContent('photo1')">People I met along the journey</li>
+        <div id="photo1" class="toggle-content">
+            <p>I am also thankful to the people that i met along the way here during these times that im existing on this world they are also one of the important subjects that shaped me.</p>
+            <div class="media-container">
+                <div class="media-item"><img src="1.jpg" alt="photo1"></div>            
+                    <div class="media-item"><img src="pool.jpg" alt="photo1"></div>                     
+                        <div class="media-item"><img src="2.jpg" alt="photo1"></div>                          
+                            <div class="media-item"><img src="sport.jpeg" alt="photo1"></div>
+                            <div class="media-item"><img src="she.jpg" alt="photo1"></div>                         
+        </div>
+    </ul>
+    <ul>
+        <li class="toggle-button" onclick="toggleContent('video')">RANDOM videos</li>
+        <div id="video" class="toggle-content">
+            <p>Here shows videos of the things me and my friends did. Which I also treasure too as part of a good memories</p>
+            <div class="media-container">
+            <div class="media-item"><video controls><source src="random hehe.mp4"></video></div>
+            <div class="media-item"><video controls><source src="ulan amp.mp4"></video></div>
+            <div class="media-item"><video controls><source src="butong.mp4"></video></div>
+            <div class="media-item"><video controls><source src="singer.mp4"></video></div>
+            <div class="media-item"><video controls><source src="sour.mp4"></video></div>
+            <div class="media-item"><video controls><source src="idk.mp4"></video></div>
+            <div class="media-item"><video controls><source src="lamaw mga.mp4"></video></div>
+            <div class="media-item"><video controls><source src="kikik.mp4"></video></div>
+
+
+            
+        </div>
+        </ul>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <h2>Contact Me</h2>
+        <p>Feel free to reach out through my social media links below:</p>
+        <div class="social-links">
+            <a href="https://facebook.com/keiShirogane107" target="_blank" aria-label="Facebook">Facebook</a>
+            <a href="https://instagram.com/kaisalvl18" target="_blank" aria-label="Instagram">Instagram</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>© <span id="2024"></span> Barsana Justine | <a href="mailto:barsanajustine@gmail.com">Contact</a></p>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => section.classList.remove('active'));
+            document.getElementById(sectionId).classList.add('active');
+        }
+
+        // Dynamic footer year
+        document.getElementById("year").textContent = new Date().getFullYear();
+
+        // Toggle content for things I like and hate
+        function toggleContent(id) {
+            const content = document.getElementById(id);
+            content.style.display = content.style.display === "block" ? "none" : "block";
+        }
+
+        // Scroll effect for fading in sections
+        const sections = document.querySelectorAll('.section');
+        window.addEventListener('scroll', () => {
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top < window.innerHeight) {
+                    section.classList.add('scroll-fade');
+                    section.classList.add('visible');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
